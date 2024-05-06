@@ -1,0 +1,50 @@
+{
+    "name": "serphouse/serphouse-php",
+    "description": "Automate your search engines (Google, Bing, Yahoo) result (serp api) using Serphouse.com API client and retrive in structured JSON format.",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/SERPHouse/serphouse-php",
+    "require": {
+        "php": ">=7.2",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.8"
+    },
+    "keywords":[
+        "Serp Api",
+        "Google Serp Api",
+        "Bing Serp Api",
+        "Yahoo Serp Api",
+        "php sdk",
+        "serphouse",
+        "Serp",
+        "Search",
+        "Result",
+        "Google",
+        "Localisation",
+        "REST",
+        "api",
+        "client",
+        "curl",
+        "JSON",
+        "XML",
+        "datamining",
+        "ml",
+        "learning",
+        "scrape"
+    ],
+    "autoload": {
+        "psr-4": {
+            "SERPHouse\\": "src/SERPHouse/",
+            "SERPHouse\\Tests\\": "tests/"
+
+        }
+    },
+    "support": {
+        "email": "getsupport@serphouse.com"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5",
+        "phpstan/phpstan": "^1.10"
+    }
+}

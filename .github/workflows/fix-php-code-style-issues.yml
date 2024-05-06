@@ -1,0 +1,28 @@
+name: Style PHP-CS-Fixer
+
+on:
+  push:
+    branches: [ "master" ]
+    paths:
+      - '**.php'
+  pull_request:
+    branches: [ "master" ]
+    paths:
+      - '**.php'
+
+jobs:
+  style:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Run PHP CS Fixer
+        uses: docker://oskarstark/php-cs-fixer-ga
+        with:
+          args: --config=.php-cs-fixer.php --allow-risky=yes
+     
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Apply PHP-CS-Fixer changes
