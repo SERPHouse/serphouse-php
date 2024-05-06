@@ -1,11 +1,11 @@
 
 # serphouse-php
 
-![Packagist License](https://img.shields.io/packagist/l/SERPHouse/serphouse-php)
-![Packagist Downloads](https://img.shields.io/packagist/dt/SERPHouse/serphouse-php)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/SERPHouse/serphouse-php/run-tests.yml?logo=githubactions&label=Tests%20with%20PHPUnit)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/SERPHouse/serphouse-php/phpstan.yml?logo=githubactions&label=PHPStan)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/SERPHouse/serphouse-php/fix-php-code-style-issues.yml?logo=githubactions&label=Code%20Quality)
+[![Packagist License](https://img.shields.io/packagist/l/serphouse/serphouse-php)](https://packagist.org/packages/serphouse/serphouse-php)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/serphouse/serphouse-php)](https://packagist.org/packages/serphouse/serphouse-php)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/SERPHouse/serphouse-php/run-tests.yml?logo=githubactions&label=Tests%20with%20PHPUnit)](https://github.com/SERPHouse/serphouse-php/actions/workflows/run-tests.yml)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/SERPHouse/serphouse-php/phpstan.yml?logo=githubactions&label=PHPStan)](https://github.com/SERPHouse/serphouse-php/actions/workflows/phpstan.yml)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/SERPHouse/serphouse-php/fix-php-code-style-issues.yml?logo=githubactions&label=Code%20Quality)](https://github.com/SERPHouse/serphouse-php/actions/workflows/fix-php-code-style-issues.yml)
 
 SERPHouse API is the starting point on your journey towards building a powerful SEO software. With SERPHouse you can get all the data you’d need to build an efficient application while also saving your time and your budget.
 
@@ -77,184 +77,184 @@ You can obtain an API key by registering at [https://app.serphouse.com/register]
 
 **1. SERP Live**
 
-    ```php
-    $serphouse->serpApi->live([
-        'data' => [
-            'q' => 'apple',
-            'domain' => 'google.com',
-            'lang' => 'en',
-            'device' => 'desktop',
-            'serp_type' => 'web',
-            'loc' => 'Alba,Texas,United States',
-            'loc_id' => '1026201',
-            'verbatim' => '0',
-            'gfilter' => '0',
-            'page' => '1',
-            'num_result' => '10',
-        ],
-    ]);
-    ```
-    If you need to get response by responseType HTML or Json then you can use Like Below Example:
+```php
+$serphouse->serpApi->live([
+    'data' => [
+        'q' => 'apple',
+        'domain' => 'google.com',
+        'lang' => 'en',
+        'device' => 'desktop',
+        'serp_type' => 'web',
+        'loc' => 'Alba,Texas,United States',
+        'loc_id' => '1026201',
+        'verbatim' => '0',
+        'gfilter' => '0',
+        'page' => '1',
+        'num_result' => '10',
+    ],
+]);
+```
+If you need to get response by responseType HTML or Json then you can use Like Below Example:
 
-    ```php
-    $serphouse->serpApi->live('DATA_ARRAY','responseType'); // default responseType is Json
-    ```
+```php
+$serphouse->serpApi->live('DATA_ARRAY','responseType'); // default responseType is Json
+```
 
 **2. SERP Schedule**
 
-    ```php
-    $serphouse->serpApi->schedule([
-        "data" => [
-            [
-                "q" => "Coffee",
-                "domain" => "google.com",
-                "lang" => "en",
-                "device" => "desktop",
-                "serp_type" => "web",
-                "loc" => "Alba,Texas,United States",
-                "verbatim" => 0,
-                "postback_url" => "Webhook_url",
-                "pingback_url" => "Webhook_url",
-                "page" => 1,
-                "num_result" => 10
-            ]
+```php
+$serphouse->serpApi->schedule([
+    "data" => [
+        [
+            "q" => "Coffee",
+            "domain" => "google.com",
+            "lang" => "en",
+            "device" => "desktop",
+            "serp_type" => "web",
+            "loc" => "Alba,Texas,United States",
+            "verbatim" => 0,
+            "postback_url" => "Webhook_url",
+            "pingback_url" => "Webhook_url",
+            "page" => 1,
+            "num_result" => 10
         ]
-    ]);
-    ```
+    ]
+]);
+```
 
 **3. SERP Check**
 
-    ```php
-    $serphouse->serpApi->check('SERP_ID');
-    ```
+```php
+$serphouse->serpApi->check('SERP_ID');
+```
     
 **4. SERP Get**
 
-    ```php
-    $serphouse->serpApi->get('SERP_ID');
-    ```
+```php
+$serphouse->serpApi->get('SERP_ID');
+```
 
-    If you need to get response by responseType HTML or Json then you can use like below example:
+If you need to get response by responseType HTML or Json then you can use like below example:
 
-    ```php
-    $serphouse->serpApi->get('SERP_ID','responseType'); // default responseType is Json
-    ```
+```php
+$serphouse->serpApi->get('SERP_ID','responseType'); // default responseType is Json
+```
 
 > ## [Domains List](#examples)
 
 **1. Get Domains List**
 
-    ```php
-    $serphouse->domains->list();
-    ```
+```php
+$serphouse->domains->list();
+```
 
 > ## [Languages List](#examples)
 
 **1. Get Languages List**
 
-    ```php
-    $serphouse->languages->list();
-    ```
+```php
+$serphouse->languages->list();
+```
 
-    If you need to get Languages List by google, bing and yahoo then you can use like below example:
+If you need to get Languages List by google, bing and yahoo then you can use like below example:
 
-    ```php
-    $serphouse->languages->list(['type'=> 'bing']); // default type is google
-    ```
+```php
+$serphouse->languages->list(['type'=> 'bing']); // default type is google
+```
 
 > ## [Locations List](#examples)
 
 **1. Get Locations List**
 
-    ```php
-    $serphouse->location->search(['q'=> 'texas']);
-    ```
+```php
+$serphouse->location->search(['q'=> 'texas']);
+```
 
-    If you need to get Locations List by google, bing and yahoo then you can use like below example:
+If you need to get Locations List by google, bing and yahoo then you can use like below example:
 
-    ```php
-    $serphouse->languages->search(['q'=> 'texas','type'=> 'bing']); // default type is google
-    ```
+```php
+$serphouse->languages->search(['q'=> 'texas','type'=> 'bing']); // default type is google
+```
 
 > ## [Account Info](#examples)
 
 **1. Get Account Information**
 
-    ```php
-    $serphouse->account->fetch();
-    ```
+```php
+$serphouse->account->fetch();
+```
 
 > ## [Trend Api](#examples)
 
 **1. Trend Search**
 
-    ```php
-    $serphouse->trends->search([
-        'time_zone_offset' => '-330',
-        'keywords' => 'google,youtube',
-        'time' => 'now 1-d',
-        'property' => 'youtube',
-        'category' => '0',
-        'geo' => 'us',
-        'language_code' => 'en'
-    ]);
-    ```
+```php
+$serphouse->trends->search([
+    'time_zone_offset' => '-330',
+    'keywords' => 'google,youtube',
+    'time' => 'now 1-d',
+    'property' => 'youtube',
+    'category' => '0',
+    'geo' => 'us',
+    'language_code' => 'en'
+]);
+```
 
 **2. Trend Schedule**
 
-    ```php
-    $serphouse->trends->schedule([
-        "data" => [
-            [
-                "time_zone_offset" => -330,
-                "keywords" => "google",
-                "time" => "now 1-d",
-                "property" => "youtube",
-                "category" => 0,
-                "geo" => "us",
-                "language_code" => "en",
-                "postback_url" => "Webhook_url",
-                "pingback_url" => "Webhook_url"
-            ]
+```php
+$serphouse->trends->schedule([
+    "data" => [
+        [
+            "time_zone_offset" => -330,
+            "keywords" => "google",
+            "time" => "now 1-d",
+            "property" => "youtube",
+            "category" => 0,
+            "geo" => "us",
+            "language_code" => "en",
+            "postback_url" => "Webhook_url",
+            "pingback_url" => "Webhook_url"
         ]
-    ]);
-    ```
+    ]
+]);
+```
 
 **3. Get TimeZone List**
 
-    ```php
-    $serphouse->trends->timeZoneList();
-    ```
+```php
+$serphouse->trends->timeZoneList();
+```
 
 **4. Get Categories List**
 
-    ```php
-    $serphouse->trends->categoryList();
-    ```
+```php
+$serphouse->trends->categoryList();
+```
 
 **5. Get Country and State List**
 
-    ```php
-    $serphouse->trends->countryStateList();
-    ```
+```php
+$serphouse->trends->countryStateList();
+```
 
 **6. Get Language List**
 
-    ```php
-    $serphouse->trends->languageList();
-    ```
+```php
+$serphouse->trends->languageList();
+```
 
 **7. Trends Check**
 
-    ```php
-    $serphouse->trends->check('TRENDS_ID');
-    ```
+```php
+$serphouse->trends->check('TRENDS_ID');
+```
 
 **8. Trends Get**
 
-    ```php
-    $serphouse->trends->get('TRENDS_ID');
-    ```
+```php
+$serphouse->trends->get('TRENDS_ID');
+```
 
 ## Response
 
