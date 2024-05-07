@@ -37,6 +37,14 @@ composer require serphouse/serphouse-php
 
 ## Usage
 
+you need to load the dependency in your script.
+
+```php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+?>
+```
+
 After installing the package, you can set up the Serphouse client in your code like this:
 
 ```php
@@ -44,14 +52,10 @@ After installing the package, you can set up the Serphouse client in your code l
 
 use Serphouse\SERPHouseClient;
 
-$serphouse = new SERPHouseClient('Your_API_Key_Here');
+$serphouse = new SERPHouseClient('YOUR_API_KEY');
 ```
-Replace 'Your_API_Key_Here' with your actual Serphouse API key.
 
-## Pull Request
-
-- Contributors can send their pull requests to the `develop` branch.
-- Please ensure that test cases are validated before opening a new pull request.
+Replace 'YOUR_API_KEY' with your actual Serphouse API key.
 
 ## Get API Key
 
